@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Header from './header';
+import Buscar from './buscar';
+import Video from './video';
+import ListVideo from './listVideos';
+import { VideoContext } from './videoContext';
+import { videos  } from './data/videos';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <VideoContext.Provider value={videos}>
+        <Header/>
+        <Buscar/>
+        <ListVideo/>
+      </VideoContext.Provider>
     </div>
   );
 }
